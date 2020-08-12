@@ -1,0 +1,17 @@
+#mobile {
+    margin-top: 58px;
+    padding: 15px;
+
+    h1 {
+        color: $black-x;
+        font-size: 1.9em;
+        padding: 10px;
+        border-bottom: 1px solid $sunset5;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #mobile {
+        margin-top: 0;
+    }
+}

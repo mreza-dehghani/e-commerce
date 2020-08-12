@@ -1,0 +1,209 @@
+.brand-sm {
+    padding: 10px;
+    background-color: $sunset5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    box-shadow: 0 0 4px 0 $black-xx;
+
+    #brand-name {
+        align-self: center;
+        flex-grow: 10;
+        text-align: left;
+        #one {
+            color: $white;
+        }
+
+        #two {
+            color: $white-xx;
+        }
+    }
+
+    #bars-btn {
+        align-self: center;
+        flex-grow: 1;
+        border: none;
+        padding: 1px;
+        background-color: $sunset5;
+        color: $white;
+        font-size: 1.5em;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+#sidebar-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: $black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-displayBlock {
+    display: block;
+}
+
+.bg-displayNone {
+    display: none;
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 100;
+    height: 100%;
+    width: 80%;
+    background-color: $white;
+    transition: 0.3s;
+    // z-index: 200;
+    overflow: auto;
+}
+
+.displayBlock {
+    right: 0%;
+}
+
+.displayNone {
+    right: -100%;
+}
+
+.sidebar-nav {
+    // overflow: scroll;
+
+    #navbar-login-container {
+        padding: 30px;
+        background-color: $sunset5;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        // background-color: $black-x;
+
+        #navbar-login {
+            padding: 10px;
+            align-self: center;
+            // background-color: $black-x;
+            border: 1px solid $white;
+            border-radius: 8px;
+
+            h6 {
+                color: $white;
+            }
+        }
+    }
+
+    #nav-content {
+        // overflow: scroll;
+        nav {
+
+            ul {
+                width: 100%;
+                padding: 0;
+                .nav-item {
+                    width: 100%;
+                    padding: 5px 0;
+
+                    .nav-link {
+                        color: $black-xx;
+
+                        .fa {
+                            margin-left: 4px;
+                        }
+
+
+                    }
+
+                    .have-product {
+                        border-bottom: 1px solid $white;
+
+                        span {
+                            i {
+                                float: left;
+                            }
+                        }
+                        ul {
+                            list-style: none;
+                            background-color: $white;
+                            margin-right: -5px;
+                            padding:10px;
+
+                            .nav-item {
+                                padding: 0px;
+                                border-bottom: 1px solid $sunset3;
+                                
+                                .link {
+                                    color: $sunset5;
+                                    font-size: 0.8em;
+                                    padding-right: 8px;
+                                }
+                            }
+                        }
+
+                        .showProduct_ {
+                            display: block;
+                        }
+    
+                        .notShowProduct_ {
+                            display: none;
+                        }
+                    }
+
+                    #main-product {
+                        list-style: none;
+                        padding: 5px;
+                        background-color: $sunset5;
+                        transition: 0.2s;
+
+                        .nav-item {
+                            margin-right: 5px;
+                            .nav-link {
+                                font-size: 0.8em;
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    .showProduct {
+                        display: block;
+                    }
+
+                    .notShowProduct {
+                        display: none;
+                    }
+                }
+
+                .hr {
+                    border-top: 1px solid $sunset5;
+                    border-bottom: 1px solid $sunset5;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 468px) {
+    #sidebar-wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    #sidebar-wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #sidebar-wrapper {
+        width: 40%;
+    }
+}

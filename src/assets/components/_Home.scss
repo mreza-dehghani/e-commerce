@@ -1,0 +1,69 @@
+@import './Slider';
+@import './Section';
+@import './Concept';
+
+.home {
+    margin-top:58px ;
+    padding:10px;
+
+    #productList_ {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: $sunset4;
+        box-shadow: 0 0 4px $black-xx;
+        border-radius: 8px;
+
+        h3 {
+            padding: 20px;
+            font-size: 1.4em;
+            color: $white;
+            border-bottom: 1px solid $white;
+        }
+
+        .card {
+            border-radius: 8px;
+            border: none;
+
+            &:hover {
+                .card-body {
+                    .link {
+                        color: $sunset3;
+                    }
+
+                    i {
+                        animation: angleLeft 0.4s ;
+                    }
+                }
+            }
+
+            .card-body {
+                .link {
+                    font-size: 0.9em;
+                    color: $sunset5;
+                    transition: 0.1s;
+                    width: 100%;
+                    display: block;
+                }
+                i {
+                    float: left;
+                    font-size: 1.5em;
+                    color: $sunset3;
+                }
+            }
+        }
+    }
+}
+
+@keyframes angleLeft {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .home {
+        margin-top: 0;
+        padding: 40px 15px;
+    }
+}

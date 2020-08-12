@@ -1,0 +1,65 @@
+@import 'base/variable';
+@import 'components/HeaderSm';
+@import 'components/HeaderLg';
+@import './components/Home';
+@import './components/ProductPage';
+@import './components/Footer';
+@import './components/Product';
+@import './components/ProductItem';
+
+
+// icons
+@import 'library/font-awesome/css/font-awesome.css';
+
+// @import 'font/Sahel.woff';
+@font-face {
+    font-family: 'sahel';
+    src: url('font/Sahel.woff') format('woff');
+}
+
+body {
+    font-family: 'sahel';
+    text-align: right;
+    background-color: $white-x;
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container {
+    max-width: 1240px !important;
+    padding: 0 ;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.header-lg {
+    display: none;
+}
+
+main {
+    min-height: 500px;
+    margin-top: 58px;
+}
+
+@media screen and (min-width: 992px) {
+
+    main {
+        margin-top: 0;
+    }
+
+    .header-sm {
+        display: none;
+    }
+
+    .header-lg {
+        display: block;
+    }
+}

@@ -1,0 +1,14 @@
+
+.header-lg {
+    // position: sticky;
+    // top: 0;
+    // right: 0;
+    width: 100%;
+    #banner {
+        width: 100%;
+        padding: 30px;
+        background-color: $sunset5;
+    }
+
+    @import './BrandLg';
+}
