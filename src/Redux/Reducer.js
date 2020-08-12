@@ -2,7 +2,7 @@ import { act } from "react-dom/test-utils"
 
 
 const initialState = {
-    cart: [],
+    addedItems: [],
     loading: false,
     mobiles: [],
     tablets: [],
@@ -25,7 +25,7 @@ export const reducer = (state = initialState, action) => {
         case 'ADD_TO_CART':
             return {
                 ...state,
-                cart: state.cart.concat(action.payload)
+                addedItems: action.payload
             }
         case 'FETCH_MOBILE_SUCCESS':
             return{

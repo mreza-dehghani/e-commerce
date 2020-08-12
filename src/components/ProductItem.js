@@ -6,6 +6,7 @@ import Loading from './Loading'
 function ProductItem(props) {
     const id = props.match.params.id;
     const [product, setProduct] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         console.log(props.match.params.id);
@@ -17,8 +18,9 @@ function ProductItem(props) {
         })
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
+            console.log(data)
             setProduct(data)
+            setLoading(true)
         })
         .catch(error => {
             console.log(error.message)
@@ -29,43 +31,74 @@ function ProductItem(props) {
         props.addToCart(item)
         console.log(true)
         setTimeout(()=>{
-            console.log(props.cart)
-        }, 5000)
+            console.log(props.addedItems)
+        }, 2000)
     }
 
-    return (
-        <div className="container" id="product-item">
-            <h1>محصول</h1>
-            <Loading />
-            <div id="product-item-container">
-                <div id="product-info">
-                    <h5>{product.title_fa}</h5>
-                    <p> {product.title_en} </p>
-                    <span> برند: {product.brand} </span>
-                    <span> دسته بندی: {product.category} </span>
-                    <br />
-                    <h6>فروشنده: {product.seller}</h6>
-                    <b> {product.price} تومان</b>
-                    <p>موجودی: {product.status} </p>
-                    <button type="button" onClick={() => addToCartHandler(product)}>اضافه به سبد خرید</button>
-                </div>
-                <div id="product-img">
-                    <img src={product.image} alt={product.title_fa} />
+    if(loading === true) {
+        return (
+            <div className="container" id="product-item">
+                <h1>محصول</h1>
+                <Loading />
+                <div id="product-item-container">
+                    <div id="product-info">
+                        <h5>{product.title_fa}</h5>
+                        <p> {product.title_en} </p>
+                        <span> برند: {product.brand} </span>
+                        <span> دسته بندی: {product.category} </span>
+                        <br />
+                        <h6>فروشنده: {product.seller}</h6>
+                        <b> {product.price} تومان</b>
+                        <p>موجودی: {product.status} </p>
+                        <button type="button" onClick={() => addToCartHandler(product)}>اضافه به سبد خرید</button>
+                    </div>
+                    <div id="product-img">
+                        <img src={product.image} alt={product.title_fa} />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div className="container" id="product-item">
+                <div className="sipinner spinner-border text-primary"></div>
+            </div>
+        )
+    }
+
+    // return (
+    //     <div className="container" id="product-item">
+    //         <h1>محصول</h1>
+    //         <Loading />
+    //         <div id="product-item-container">
+    //             <div id="product-info">
+    //                 <h5>{product.title_fa}</h5>
+    //                 <p> {product.title_en} </p>
+    //                 <span> برند: {product.brand} </span>
+    //                 <span> دسته بندی: {product.category} </span>
+    //                 <br />
+    //                 <h6>فروشنده: {product.seller}</h6>
+    //                 <b> {product.price} تومان</b>
+    //                 <p>موجودی: {product.status} </p>
+    //                 <button type="button" onClick={() => addToCartHandler(product)}>اضافه به سبد خرید</button>
+    //             </div>
+    //             <div id="product-img">
+    //                 <img src={product.image} alt={product.title_fa} />
+    //             </div>
+    //         </div>
+    //     </div>
+    // )
 }
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart
+        addedItems: state.addedItems
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addToCart: (item) => dispatch(addToCart(item))
+        addToCart: (i) => dispatch(addToCart(i))
     }
 }
 
