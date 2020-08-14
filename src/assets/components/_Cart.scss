@@ -1,31 +1,77 @@
 .cart {
     padding: 50px 20px;
     .card {
-        // display: flex;
-        // flex-direction: column;
-        // flex-wrap: wrap;
+        background-color: $white;
+        border-radius: 8px;
+        min-height: 373px;
 
         .card-header {
-            background-color: $sunset1;
-            // width: 150px;
-            // flex-grow: 0;
+            padding: 0;
+            overflow: hidden;
             img {
                 width: 100%;
             }
         }
 
         .card-body {
-            background-color: $sunset3;
-            // width: 150px;
-            // flex-grow: 10;
-
-
+            background-color: $white;
+            
+            p {
+                text-align: justify;
+                font-size: 0.8em;
+                color: $black-x;
+            }
         }
 
         .card-footer {
-            background-color: $sunset5;
-            // width: 150px;
+            background-color: $white;
+            text-align: center;
 
+            button {
+                padding: 5px 12px;
+                color: $white;
+                background-color: $sunset5;
+                transition: 0.2s;
+                border-radius: 5px;
+                border: none;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: $sunset3;
+                }
+            }
+        }
+    }
+
+    #payment-container {
+        background-color: $white;
+        padding: 15px;
+        border-radius: 8px;
+        max-width: 1000px;
+        margin: auto;
+
+        button {
+            padding: 5px 12px;
+            color: $white;
+            background-color: $sunset5;
+            transition: 0.2s;
+            border-radius: 5px;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:disabled {
+                opacity: 0.2;
+            }
+
+            &:hover {
+                background-color: $sunset3;
+            }
         }
     }
 }

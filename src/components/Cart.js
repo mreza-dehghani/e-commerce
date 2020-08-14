@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-
-import p7 from './image/p7.jpg'
+import {removeFromCart} from '../Redux/Action'
 
 class Cart extends Component {
+
+    convertNumber = (fromNum) => {
+        return fromNum.toLocaleString('fa')
+    }
+
+    removeFromCartHandler = (item, price) => {
+        this.props.removeFromCart(item, price)
+        console.log(true)
+    }
+
     render() {
 
         let addedItem = this.props.addedItems.length ?
@@ -11,43 +20,26 @@ class Cart extends Component {
                 this.props.addedItems.map(item=>{
                     return(
 
-                        <div className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4" key={item.id}>
+                        <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={item.id}>
                             <div className="card">
                                 <div className="card-header">
                                     <img src={item.image} alt={item.title_fa} />
                                 </div>
                                 <div className="card-body">
-                                    <h5> {item.title_fa} </h5>
-                                    <p></p>
+                                    <p>
+                                        {item.title_fa}
+                                    </p>
                                 </div>
-                                {/* <div className="card-footer">
-                                    <img src={p7} alt="as" />
-                                </div> */}
+                                <div className="card-footer">
+                                    <button type="button" onClick={() => this.removeFromCartHandler(item, item.price)}>حذف</button>
+                                </div>
                             </div>
-                        </div>
-                       
-                        // <li className="collection-item avatar" key={item.id}>
-                        //             <div className="item-img"> 
-                        //                 <img src={item.img} alt={item.img} className=""/>
-                        //             </div>
-                                
-                        //             <div className="item-desc">
-                        //                 <span className="title">{item.title}</span>
-                        //                 <p>{item.desc}</p>
-                        //                 <p><b>Price: {item.price}$</b></p> 
-                        //                 <p>
-                        //                     <b>Quantity: {item.quantity}</b> 
-                        //                 </p>
-                        //                 <div className="add-remove">
-                        //                     {/* <Link to="/cart"><i className="material-icons">arrow_drop_up</i></Link>
-                        //                     <Link to="/cart"><i className="material-icons">arrow_drop_down</i></Link> */}
-                        //                 </div>
-                        //                 <button className="waves-effect waves-light btn pink remove">Remove</button>
-                        //             </div>
-                                    
-                        //        </li>                        
+                        </div>                     
                     )
                 })
+
+                
+
             ):
 
              (
@@ -61,6 +53,13 @@ class Cart extends Component {
                     <div className="row">
                         {addedItem}
                     </div>
+                    <div className="row mt-5" id="payment-container">
+                        <div className="col-12 text-center">
+                            <h5> مجموع قیمت: {this.convertNumber(this.props.total)} تومان</h5>
+                            <p>مجموع کالاها: {this.convertNumber(this.props.addedItems.length)} </p>
+                            <button type="button" disabled={this.props.addedItems.length === 0}>پرداخت</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -69,8 +68,15 @@ class Cart extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        addedItems: state.addedItems
+        addedItems: state.addedItems,
+        total: state.total
     }
 }
 
-export default connect(mapStateToProps, null)(Cart)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeFromCart: (item, price) => dispatch(removeFromCart(item, price))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

@@ -3,6 +3,7 @@ import { act } from "react-dom/test-utils"
 
 const initialState = {
     addedItems: [],
+    total: 0,
     loading: false,
     mobiles: [],
     tablets: [],
@@ -25,8 +26,14 @@ export const reducer = (state = initialState, action) => {
         case 'ADD_TO_CART':
             return {
                 ...state,
-                // addedItems: [...state.addedItems, action.payload]
-                addedItems: [...state.addedItems, action.payload]
+                addedItems: [...state.addedItems, action.payload],
+                total: state.total + action.price
+            }
+        case 'REMOVE_FROM_CART':
+            return {
+                ...state,
+                addedItems: state.addedItems.filter((index) => index !== action.payload),
+                total: state.total - action.price
             }
         case 'FETCH_MOBILE_SUCCESS':
             return{

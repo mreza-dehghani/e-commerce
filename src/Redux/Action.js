@@ -11,6 +11,7 @@ const FETCH_ACCOSSERISE_MAIN_SUCCESS = 'FETCH_ACCOSSERISE_MAIN_SUCCESS'
 const FETCH_GAME_CONSOLE_SUCCESS = 'FETCH_GAME_CONSOLE_SUCCESS'
 
 const ADD_TO_CART = 'ADD_TO_CART'
+const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 
 export const fetchPostRequest = () => {
     return {
@@ -80,9 +81,18 @@ export const fetchGameConsoleSuccess = (payload) => {
     }
 }
 
-export const addToCart = (payload) => {
+export const addToCart = (payload, price) => {
     return {
         type: ADD_TO_CART,
-        payload: payload
+        payload: payload,
+        price: price
+    }
+}
+
+export const removeFromCart = (payload, price) => {
+    return {
+        type: REMOVE_FROM_CART,
+        payload: payload,
+        price: price
     }
 }
