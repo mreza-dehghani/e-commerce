@@ -183,6 +183,11 @@
                 .hr {
                     border-top: 1px solid $sunset5;
                     border-bottom: 1px solid $sunset5;
+
+                    b {
+                        color: $sunset5;
+                        margin-right: 5px;
+                    }
                 }
 
             }

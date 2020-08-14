@@ -8,6 +8,15 @@ function ProductItem(props) {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const obj = {
+
+        userId: 1,
+        id: 1,
+        title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+
+    }
+
     useEffect(() => {
         console.log(props.match.params.id);
         fetch(`https://oneapi.ir/api/dk/digital/product/${id}`, {
@@ -27,12 +36,13 @@ function ProductItem(props) {
         })
     }, [])
 
-    const addToCartHandler = (item) => {
-        props.addToCart(item)
+    const addToCartHandler = (i) => {
+        props.addToCart(i)
         console.log(true)
-        setTimeout(()=>{
-            console.log(props.addedItems)
-        }, 2000)
+        // setTimeout(()=>{
+        //     console.log(props.addedItems)
+        // }, 2000)
+        console.log(i)
     }
 
     if(loading === true) {
@@ -98,7 +108,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        addToCart: (i) => dispatch(addToCart(i))
+        addToCart: (product) => {dispatch(addToCart(product))}
     }
 }
 

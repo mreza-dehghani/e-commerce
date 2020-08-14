@@ -25,7 +25,8 @@ export const reducer = (state = initialState, action) => {
         case 'ADD_TO_CART':
             return {
                 ...state,
-                addedItems: action.payload
+                // addedItems: [...state.addedItems, action.payload]
+                addedItems: [...state.addedItems, action.payload]
             }
         case 'FETCH_MOBILE_SUCCESS':
             return{

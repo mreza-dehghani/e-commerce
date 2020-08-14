@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-export default class SidebarNav extends Component {
+class SidebarNav extends Component {
     constructor() {
         super() 
         this.state = {
@@ -15,6 +16,10 @@ export default class SidebarNav extends Component {
             showProduct_7: false,
             showProduct_8: false,
         }
+    }
+
+    convertNumber = (fromNum) => {
+        return fromNum.toLocaleString('fa')
     }
 
     showProduct = () => {
@@ -233,6 +238,9 @@ export default class SidebarNav extends Component {
                                 <Link to="/cart" className="nav-link">
                                     <i className="fa fa-cart-plus"></i>
                                     سبد خرید
+                                    <b id="cart-length-sm">
+                                        {this.convertNumber(this.props.addedItems.length)}
+                                    </b>
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -254,3 +262,11 @@ export default class SidebarNav extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        addedItems: state.addedItems
+    }
+}
+
+export default connect(mapStateToProps, null)(SidebarNav)

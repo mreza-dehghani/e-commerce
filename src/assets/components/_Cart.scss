@@ -1,0 +1,39 @@
+.cart {
+    padding: 50px 20px;
+    .card {
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+
+        .card-header {
+            background-color: $sunset1;
+            // width: 150px;
+            // flex-grow: 0;
+            img {
+                width: 100%;
+            }
+        }
+
+        .card-body {
+            background-color: $sunset3;
+            // width: 150px;
+            // flex-grow: 10;
+
+
+        }
+
+        .card-footer {
+            background-color: $sunset5;
+            // width: 150px;
+
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .cart {
+        .card {
+            // flex-direction: row;
+        }
+    }
+}

@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-export default class BrandLg extends Component {
+class BrandLg extends Component {
+
+    convertNumber = (fromNum) => {
+        return fromNum.toLocaleString('fa')
+    }
+
     render() {
         return (
             <div className="brand-lg">
@@ -22,6 +28,7 @@ export default class BrandLg extends Component {
                 </div>
                 <div id="cart-container">
                     <Link to="/cart" className="link">
+                        <b> {this.convertNumber(this.props.addedItems.length)} </b>
                         <i className="fa fa-cart-plus"></i>
                     </Link>
                 </div>
@@ -29,3 +36,11 @@ export default class BrandLg extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        addedItems: state.addedItems
+    }
+}
+
+export default connect(mapStateToProps, null)(BrandLg)
