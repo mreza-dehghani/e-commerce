@@ -18,6 +18,7 @@ import Console from './components/Console'
 import Camera from './components/Camera'
 import Computer from './components/Computer'
 import ProductItem from './components/ProductItem'
+import Dashbord from './components/Dashbord'
 
 export default class App extends Component {
 
@@ -42,6 +43,7 @@ export default class App extends Component {
                         <Route path="/product/game-console" component={Console} />
                         <Route path="/product/camera" component={Camera} />
                         <Route path="/product-item/:id" component={ProductItem} />
+                        <Route path="/dashbord" component={Dashbord} />
                     </Switch>
                 </main>
                 <Footer />
