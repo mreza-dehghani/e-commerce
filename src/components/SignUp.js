@@ -18,7 +18,6 @@ export default class SignUp extends Component {
         if(username === 'admin' && password === 'admin') {
             this.props.history.push('/dashbord')
         } else {
-            console.log(false)
             this.setState({
                 haveError: true,
                 errorMessage: 'نام کاربری یا رمز عبور اشتباه است.'

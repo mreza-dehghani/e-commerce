@@ -10,7 +10,10 @@ class Cart extends Component {
 
     removeFromCartHandler = (item, price) => {
         this.props.removeFromCart(item, price)
-        console.log(true)
+    }
+
+    paymentHandler = () => {
+        alert(`مبلغ ${this.props.total} تومان، پرداخت شد.`)
     }
 
     render() {
@@ -55,7 +58,7 @@ class Cart extends Component {
                         <div className="col-12 text-center">
                             <h5> مجموع قیمت: {this.convertNumber(this.props.total)} تومان</h5>
                             <p>مجموع کالاها: {this.convertNumber(this.props.addedItems.length)} </p>
-                            <button type="button" disabled={this.props.addedItems.length === 0}>پرداخت</button>
+                            <button type="button" onClick={()=>this.paymentHandler()} disabled={this.props.addedItems.length === 0}>پرداخت</button>
                         </div>
                     </div>
                 </div>
