@@ -97,6 +97,12 @@ export const reducer = (state = initialState, action) => {
                 loading: false,
                 error: true
             }
+        case 'PAY':
+            return {
+                ...state,
+                addedItems: [],
+                total: 0
+            }
 
         default:
             return state

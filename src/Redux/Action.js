@@ -13,6 +13,8 @@ const FETCH_GAME_CONSOLE_SUCCESS = 'FETCH_GAME_CONSOLE_SUCCESS'
 const ADD_TO_CART = 'ADD_TO_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 
+const PAY = 'PAY'
+
 export const fetchPostRequest = () => {
     return {
         type: FETCH_POST_REQUEST
@@ -94,5 +96,11 @@ export const removeFromCart = (payload, price) => {
         type: REMOVE_FROM_CART,
         payload: payload,
         price: price
+    }
+}
+
+export const paymentHandler = () => {
+    return {
+        type: PAY
     }
 }

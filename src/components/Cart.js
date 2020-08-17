@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {removeFromCart} from '../Redux/Action'
+import {paymentHandler} from '../Redux/Action'
 
 class Cart extends Component {
 
@@ -12,8 +13,9 @@ class Cart extends Component {
         this.props.removeFromCart(item, price)
     }
 
-    paymentHandler = () => {
+    paymentHandler_ = () => {
         alert(`مبلغ ${this.props.total} تومان، پرداخت شد.`)
+        this.props.paymentHandler()
     }
 
     render() {
@@ -58,7 +60,7 @@ class Cart extends Component {
                         <div className="col-12 text-center">
                             <h5> مجموع قیمت: {this.convertNumber(this.props.total)} تومان</h5>
                             <p>مجموع کالاها: {this.convertNumber(this.props.addedItems.length)} </p>
-                            <button type="button" onClick={()=>this.paymentHandler()} disabled={this.props.addedItems.length === 0}>پرداخت</button>
+                            <button type="button" onClick={()=>this.paymentHandler_()} disabled={this.props.addedItems.length === 0}>پرداخت</button>
                         </div>
                     </div>
                 </div>
@@ -76,7 +78,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeFromCart: (item, price) => dispatch(removeFromCart(item, price))
+        removeFromCart: (item, price) => dispatch(removeFromCart(item, price)),
+        paymentHandler: () => dispatch(paymentHandler())
     }
 }
 

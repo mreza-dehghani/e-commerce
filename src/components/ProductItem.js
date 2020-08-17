@@ -8,7 +8,7 @@ function ProductItem(props) {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        console.log(props.match.params.id);
+        console.log(id);
         fetch(`https://oneapi.ir/api/dk/digital/product/${id}`, {
             methods: 'GET',
             headers: {
@@ -17,7 +17,7 @@ function ProductItem(props) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setProduct(data)
             setLoading(true)
         })
