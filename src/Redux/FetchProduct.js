@@ -1,12 +1,14 @@
 import {fetchPostRequest, fetchMobileSuccess, fetchPostError, fetchTabletSuccess, fetchLaptopSuccess, fetchCameraSuccess, fetchComputePartsSuccess, fetchOfficeMachinesSuccess, fetchAccosseriseMainSuccess, fetchGameConsoleSuccess} from './Action'
 
+const KEY = '56676c93f54562947c5fb92688ed6efb'
+
 export const getMobiles = () => {
     return dispatch => {
         dispatch(fetchPostRequest())
         fetch('https://oneapi.ir/api/dk/digital/category/mobile', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -26,7 +28,7 @@ export const getTablets = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/tablet', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -45,7 +47,7 @@ export const getLaptops = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/laptop', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -64,7 +66,7 @@ export const getCameras = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/camera', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -83,7 +85,7 @@ export const getComputerParts = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/computer-parts', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -102,7 +104,7 @@ export const getOfficeMechines = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/office-machines', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -121,7 +123,7 @@ export const getAccosseriesMain = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/accessories-main', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())
@@ -140,7 +142,7 @@ export const getGameConsoles = () => {
         fetch('https://oneapi.ir/api/dk/digital/category/game-console', {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : KEY
             }
         })
         .then(response => response.json())

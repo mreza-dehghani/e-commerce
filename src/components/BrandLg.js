@@ -4,9 +4,24 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 class BrandLg extends Component {
+    constructor() {
+        super()
+        this.searchInput = React.createRef()
+    }
 
     convertNumber = (fromNum) => {
         return fromNum.toLocaleString('fa')
+    }
+
+    onKeyPress = (e) => {
+        if(e.keyCode==13) {
+            this.searchHandler()
+        }
+    }
+
+    searchHandler = () => {
+        let value = this.searchInput.current.value;
+        alert(`موردی برای نمایش ${value}، یافت نشد`)
     }
 
     render() {
@@ -21,7 +36,7 @@ class BrandLg extends Component {
                     <Navbar />
                 </div>
                 <div id="search-box">
-                    <input type="search" className="form-control" placeholder="جستجو در دیجی شاپ..." />
+                    <input type="search" onKeyDown={this.onKeyPress} ref={this.searchInput} className="form-control" placeholder="جستجو در دیجی شاپ..." />
                 </div>
                 <div id="nav-login-container">
                     <Link to="/sign-up" className="link">ورود به حساب کاربری</Link>
