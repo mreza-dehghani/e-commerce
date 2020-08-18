@@ -13,7 +13,7 @@ function Dashbord(props) {
             <div className="container pt-5 text-center">
                 <div className="row pt-5">
                     <div className="col-12 p-3">
-                        <h1> {username}، به صفحه مدیریت خود خوش آمدید. </h1>
+                        <h1> <strong>{username}</strong>، به صفحه مدیریت خود خوش آمدید. </h1>
                     </div>
                 </div>
             </div>
