@@ -15,6 +15,8 @@ const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 
 const PAY = 'PAY'
 
+const USER_SIGN_UP = 'USER_SIGN_UP'
+
 export const fetchPostRequest = () => {
     return {
         type: FETCH_POST_REQUEST
@@ -102,5 +104,12 @@ export const removeFromCart = (payload, price) => {
 export const paymentHandler = () => {
     return {
         type: PAY
+    }
+}
+
+export const userSignUp = (payload) => {
+    return {
+        type: USER_SIGN_UP,
+        payload: payload
     }
 }

@@ -12,7 +12,8 @@ const initialState = {
     officeMachines: [],
     accessoriseMain: [],
     gameConsoles: [],
-    error: false
+    error: false,
+    user: {}
 }
 
 export const reducer = (state = initialState, action) => {
@@ -103,7 +104,11 @@ export const reducer = (state = initialState, action) => {
                 addedItems: [],
                 total: 0
             }
-
+        case 'USER_SIGN_UP':
+            return {
+                ...state,
+                user: action.payload
+            }
         default:
             return state
     }

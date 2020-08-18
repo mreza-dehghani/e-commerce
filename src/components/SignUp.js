@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import {userSignUp} from '../Redux/Action'
+import {connect} from 'react-redux'
 
-export default class SignUp extends Component {
+class SignUp extends Component {
     constructor() {
         super()
         this.usernameInput = React.createRef()
-        this.passwordInput = React.createRef()
+        this.phonNumberInput = React.createRef()
         this.state = ({
             haveError: false,
             errorMessage: ''
@@ -14,14 +16,19 @@ export default class SignUp extends Component {
     onSubmitHandler = (e) => {
         e.preventDefault();
         const username = this.usernameInput.current.value;
-        const password = this.passwordInput.current.value;
-        if(username === 'admin' && password === 'admin') {
-            this.props.history.push('/dashbord')
-        } else {
+        const phonNumber = this.phonNumberInput.current.value;
+        if(username === '' && phonNumber === '') {
             this.setState({
                 haveError: true,
                 errorMessage: 'نام کاربری یا رمز عبور اشتباه است.'
             })
+        } else {
+            const user = {
+                username,
+                phonNumber
+            }
+            this.props.userSignUp(user)
+            this.props.history.push('/dashbord')
         }
     }
 
@@ -37,11 +44,11 @@ export default class SignUp extends Component {
                             </div>
                             <div id="sign-up-form">
                                 <form onSubmit={this.onSubmitHandler}>
-                                    <label>نام کاربری:</label>
+                                    <label>نام و نام خانوادگی:</label>
                                     <input type="text" ref={this.usernameInput} /><br />
-                                    <label>رمز عبور:</label>
-                                    <input type="password" ref={this.passwordInput} /><br />
-                                    <button type="submit">ورود</button>
+                                    <label>شماره موبایل:</label>
+                                    <input type="text" ref={this.phonNumberInput} /><br />
+                                    <button type="submit">عضویت</button>
                                 </form>
                             </div>
                         </div>
@@ -51,3 +58,11 @@ export default class SignUp extends Component {
         )
     }
 }
+
+const mapDispathToProps = (dispatch) => {
+    return {
+        userSignUp: (obj) => dispatch(userSignUp(obj))
+    }
+}
+
+export default connect(null, mapDispathToProps)(SignUp)
