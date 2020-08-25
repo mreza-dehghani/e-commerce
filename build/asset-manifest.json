@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.19bed8b9.chunk.css",
+    "main.js": "/static/js/main.e45c4596.chunk.js",
+    "main.js.map": "/static/js/main.e45c4596.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/js/2.4bd0603f.chunk.js": "/static/js/2.4bd0603f.chunk.js",
+    "static/js/2.4bd0603f.chunk.js.map": "/static/js/2.4bd0603f.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.84f198c33368f5532d18b9170a1c4653.js": "/precache-manifest.84f198c33368f5532d18b9170a1c4653.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.19bed8b9.chunk.css.map": "/static/css/main.19bed8b9.chunk.css.map",
+    "static/js/2.4bd0603f.chunk.js.LICENSE.txt": "/static/js/2.4bd0603f.chunk.js.LICENSE.txt",
+    "static/media/DigiShopLogo.png": "/static/media/DigiShopLogo.8d0d4382.png",
+    "static/media/index.scss": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/banner.png": "/static/media/banner.2ae1bf90.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/js/2.4bd0603f.chunk.js",
+    "static/css/main.19bed8b9.chunk.css",
+    "static/js/main.e45c4596.chunk.js"
+  ]
+}
