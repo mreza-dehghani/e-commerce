@@ -63,7 +63,6 @@
     width: 80%;
     background-color: $white;
     transition: 0.3s;
-    // z-index: 200;
     overflow: auto;
 }
 
@@ -76,7 +75,6 @@
 }
 
 .sidebar-nav {
-    // overflow: scroll;
 
     #navbar-login-container {
         padding: 30px;
@@ -85,12 +83,10 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        // background-color: $black-x;
 
         #navbar-login {
             padding: 10px;
             align-self: center;
-            // background-color: $black-x;
             border: 1px solid $white;
             border-radius: 8px;
 
@@ -101,9 +97,7 @@
     }
 
     #nav-content {
-        // overflow: scroll;
         nav {
-
             ul {
                 width: 100%;
                 padding: 0;
@@ -117,8 +111,6 @@
                         .fa {
                             margin-left: 4px;
                         }
-
-
                     }
 
                     .have-product {

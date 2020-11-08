@@ -12,12 +12,11 @@ function ProductItem(props) {
         fetch(`https://oneapi.ir/api/dk/digital/product/${id}`, {
             methods: 'GET',
             headers: {
-                'OneAPI-Key' : '56676c93f54562947c5fb92688ed6efb'
+                'OneAPI-Key' : '3ead0a1faa18fc0380563b7eaecc31dd'
             }
         })
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
             setProduct(data)
             setLoading(true)
         })

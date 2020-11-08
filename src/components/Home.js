@@ -19,24 +19,6 @@ export default class Home extends Component {
             ]
         }
     }
-    // componentDidMount() {
-    //     fetch('https://oneapi.ir/api/dk/digital/category/mobile', {
-    //         method: 'GET',
-    //         // mode: 'no-cors',
-    //         headers: {
-    //             'OneAPI-Key' : '2db914e272f67a4fa1ab55d945c4ccb1',
-    //             // 'mode' : 'no-cors'
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data)
-    //         this.setState({
-    //             mobiles: data
-    //         })
-    //     })
-    //     .catch(error => console.log(error))
-    // }
 
     render() {
         const product_ = this.state.productList.map(item => {

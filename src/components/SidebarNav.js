@@ -26,7 +26,6 @@ class SidebarNav extends Component {
         this.setState({
             showProduct: !this.state.showProduct
         })
-        console.log(true)
     }
     showProduct_1 = () => {
         this.setState({
@@ -37,46 +36,39 @@ class SidebarNav extends Component {
         this.setState({
             showProduct_2: !this.state.showProduct_2
         })
-        console.log(true)
     }
     showProduct_3 = () => {
         this.setState({
             showProduct_3: !this.state.showProduct_3
         })
-        console.log(true)
     }
     showProduct_4 = () => {
         this.setState({
             showProduct_4: !this.state.showProduct_4
         })
-        console.log(true)
     }
     showProduct_5 = () => {
         this.setState({
             showProduct_5: !this.state.showProduct_5
         })
-        console.log(true)
     }
 
     showProduct_6 = () => {
         this.setState({
             showProduct_6: !this.state.showProduct_6
         })
-        console.log(true)
     }
 
     showProduct_7 = () => {
         this.setState({
             showProduct_7: !this.state.showProduct_7
         })
-        console.log(true)
     }
 
     showProduct_8 = () => {
         this.setState({
             showProduct_8: !this.state.showProduct_8
         })
-        console.log(true)
     }
 
     render() {

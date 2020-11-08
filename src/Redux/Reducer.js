@@ -39,7 +39,7 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 loading: false,
-                mobiles: state.mobiles.concat(action.payload)
+                mobiles: [...state.mobiles, action.payload]
             }
         case 'FETCH_TABLET_SUCCESS':
             return{

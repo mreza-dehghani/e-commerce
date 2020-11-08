@@ -18,11 +18,6 @@ class Loading extends React.Component {
             </>
         )
     }
-    // return (
-    //     <>
-    //         <div className="spinner-border"></div>
-    //     </>
-    // )
 }
 
 const mapStateToProps = (state) => {

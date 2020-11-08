@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Product from './Product'
-// import { bindActionCreators } from 'redux';
 import {getOfficeMechines} from '../Redux/FetchProduct'
 import Loading from './Loading'
-
 
 class Computer extends Component {
 
@@ -48,9 +46,5 @@ const mapDispatchToProps = (dispatch) => {
         getOfficeMechines: () => dispatch(getOfficeMechines())
     }
 }
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//     getTablets: getTablets
-// }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Computer)

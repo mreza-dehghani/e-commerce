@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Product from './Product'
-// import { bindActionCreators } from 'redux';
 import {getLaptops} from '../Redux/FetchProduct'
 import Loading from './Loading'
 
@@ -10,6 +9,7 @@ class Tablet extends Component {
 
     componentDidMount() {
         this.props.getLaptops()
+        console.log(this.props.laptops)
     }
 
     render() {
@@ -48,9 +48,5 @@ const mapDispatchToProps = (dispatch) => {
         getLaptops: () => dispatch(getLaptops())
     }
 }
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//     getTablets: getTablets
-// }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tablet)

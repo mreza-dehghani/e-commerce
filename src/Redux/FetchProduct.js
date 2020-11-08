@@ -1,6 +1,6 @@
 import {fetchPostRequest, fetchMobileSuccess, fetchPostError, fetchTabletSuccess, fetchLaptopSuccess, fetchCameraSuccess, fetchComputePartsSuccess, fetchOfficeMachinesSuccess, fetchAccosseriseMainSuccess, fetchGameConsoleSuccess} from './Action'
 
-const KEY = '56676c93f54562947c5fb92688ed6efb'
+const KEY = '3ead0a1faa18fc0380563b7eaecc31dd'
 
 export const getMobiles = () => {
     return dispatch => {
@@ -13,6 +13,7 @@ export const getMobiles = () => {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             dispatch(fetchMobileSuccess(data))
         })
         .catch(error => {

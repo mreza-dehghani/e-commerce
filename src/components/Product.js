@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 export default function Product(props) {
 
     return (
-        // <div className="product col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
           <div className="card">
             <div className="card-header">
                 <Link to={`/product-item/${props.id}`}>
@@ -23,6 +22,5 @@ export default function Product(props) {
                 </p>
             </div>    
           </div>  
-        // </div>
     )
 }

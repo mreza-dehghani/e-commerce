@@ -6,7 +6,6 @@ import thunk from 'redux-thunk'
 import {reducer} from './Redux/Reducer'
 import {Provider} from 'react-redux'
 
-
 // components
 import App from './App'
 
@@ -28,4 +27,3 @@ function render() {
 }
 
 render()
-

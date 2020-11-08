@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Product from './Product'
-// import { bindActionCreators } from 'redux';
 import {getGameConsoles} from '../Redux/FetchProduct'
 import Loading from './Loading'
 
@@ -48,9 +47,5 @@ const mapDispatchToProps = (dispatch) => {
         getGameConsoles: () => dispatch(getGameConsoles())
     }
 }
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//     getTablets: getTablets
-// }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Console)
